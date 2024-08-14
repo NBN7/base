@@ -23,12 +23,12 @@ export default function LandingPage() {
                   our cutting-edge products and services.
                 </p>
               </div>
-              <div className="flex flex-col gap-2 min-[400px]:flex-row">
+              <div className="flex flex-col gap-2 sm:flex-row">
                 <Link href={ROUTES.SERVICES}>
-                  <Button className="px-8">Get Started</Button>
+                  <Button className="px-8 w-full sm:w-auto">Get Started</Button>
                 </Link>
                 <Link href={ROUTES.ABOUT}>
-                  <Button variant="outline" className="px-8">
+                  <Button variant="outline" className="px-8 w-full sm:w-auto">
                     Learn More
                   </Button>
                 </Link>
@@ -98,10 +98,10 @@ export default function LandingPage() {
               </div>
               <div className="flex flex-col gap-2 min-[400px]:flex-row">
                 <Link href="#" prefetch={false}>
-                  <Button className="px-8">Get Started</Button>
+                  <Button className="px-8 w-full sm:w-auto">Get Started</Button>
                 </Link>
                 <Link href="#" prefetch={false}>
-                  <Button variant="outline" className="px-8">
+                  <Button variant="outline" className="px-8 w-full sm:w-auto">
                     Learn More
                   </Button>
                 </Link>
