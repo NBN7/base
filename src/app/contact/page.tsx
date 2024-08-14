@@ -1,18 +1,18 @@
 import Link from 'next/link'
 
-import { Twitter, Facebook, Linkedin } from 'lucide-react'
-
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Textarea } from '@/components/ui/textarea'
+
+import { SOCIALS } from '@/constants/socials'
 
 export default function ContactPage() {
   return (
     <div className="mx-auto min-h-[calc(100dvh-121px)] w-full max-w-6xl px-4 py-12 md:px-6 md:py-20">
       <div className="grid gap-8 md:grid-cols-2 md:gap-16">
         <div className="space-y-6">
-          <div className='space-y-2'>
+          <div className="space-y-2">
             <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
               Get in Touch
             </h1>
@@ -56,27 +56,15 @@ export default function ContactPage() {
             <div>
               <h3 className="mb-4 font-semibold">Social</h3>
               <div className="flex items-center space-x-4">
-                <Link
-                  href="#"
-                  className="text-zinc-500 transition-all hover:scale-110"
-                  prefetch={false}
-                >
-                  <Twitter className="size-6" />
-                </Link>
-                <Link
-                  href="#"
-                  className="text-zinc-500 transition-all hover:scale-110"
-                  prefetch={false}
-                >
-                  <Facebook className="size-6" />
-                </Link>
-                <Link
-                  href="#"
-                  className="text-zinc-500 transition-all hover:scale-110"
-                  prefetch={false}
-                >
-                  <Linkedin className="size-6" />
-                </Link>
+                {SOCIALS.map((social) => (
+                  <Link
+                    href={social.href}
+                    className="text-zinc-500 transition-all hover:scale-110"
+                    prefetch={false}
+                  >
+                    <social.Icon className="size-6" />
+                  </Link>
+                ))}
               </div>
             </div>
           </div>
